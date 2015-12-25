@@ -1,0 +1,9 @@
+{#include file="header.htm" NEW_ON=on#}
+
+{#html_options name=foo options=$myOptions selected=$mySelect#}
+
+<select name="customer_id" size="{#$cust_names|@count#}">
+    {#html_options values=$cust_ids output=$cust_names selected=$customer_id#}
+</select>
+
+{#html_options name=foo options=$lookups selected=$fav#}

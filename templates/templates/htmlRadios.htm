@@ -1,0 +1,4 @@
+{#html_radios name='id' options=$cust_radios selected=$customer_id separator='<br />'#}
+        {#section name=n loop=$people#}
+        <a href="javascript:void(0);">{#$people[n]#}{#cycle values="hehe,haha"#}</a>
+        {#/section#}
