@@ -18,9 +18,13 @@ $smarty=new Smarty;
 $smarty->template_dir =SMARTYTMP_DIR."templates";//魔板地址，这里的地址都是相对于当前文件 即include Smarty的这个正在写的文件index.这个文件来查找相应的文件 下面几个参数的设置也死一样的
 $smarty->compile_dir =SMARTYTMP_DIR."templates_c";//缓存文件
 $smarty->config_dir = SMARTYTMP_DIR."config";//参数文件
-$smarty->cache_dir =SMARTYTMP_DIR."cache";
+$smarty->cache_dir =SMARTYTMP_DIR."cache";//设置缓存的存放路径
 //smarty模板有高速缓存的功能，如果这里是true的话即打开caching，但是会造成网页不立即更新的问题，当然也可以通过其他的办法解决
-$smarty->caching = false;
+$smarty->caching = true;
+//$smarty->debugging = true;
+//$smarty->force_compile = false;
+$smarty->cache_lifetime = 120;
+
 $smarty->left_delimiter = "{#"; //重新定义边界，因为默认边界“{}“符，在html页面中嵌入js脚本文件编写代码段时使用的就是”{}“符，自定义边界符还可以是<{ }>, {/ /} 等
 $smarty->right_delimiter = "#}";
 
